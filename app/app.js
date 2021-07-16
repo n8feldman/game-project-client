@@ -6,4 +6,6 @@ const eventHandler = require('./events.js')
 
 $(() => {
   $('#sign-up-form').on('submit', eventHandler.onSignUp)
+  $('#sign-in-form').on('submit', eventHandler.onSignIn)
+  $('#sign-out').on('click', eventHandler.onSignOut)
 })
