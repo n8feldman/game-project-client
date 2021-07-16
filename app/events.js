@@ -1,9 +1,16 @@
 'use strict'
 
-const onSignUp = (event) => {
+const getFormFields = require('./../lib/get-form-fields')
+const api = require('./api')
+const ui = require('./ui')
+
+const onSignUp = event => {
   event.preventDefault()
-  console.log('here')
-  $('h3').html('signed up')
+  const form = event.target
+  const data = getFormFields(form)
+  api.signUp(data)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onSignUpFailure)
 }
 
 module.exports = {

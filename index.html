@@ -12,16 +12,19 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>TIC-TAC-TOE</h1>
-      <form id="sign-up-form">
-        <h3>Sign up to play:</h3>
-        <label for="credentials[email]">Email</label>
-        <input name="credentials[email]" type="email">
-        <label for="credentials[password]">Password</label>
-        <input name="credentials[password]" type="password">
-        <label for="credentials[password_confirmation]">Confirm your password</label>
-        <input name="credentials[password_confirmation]" type="password">
-        <input type="submit" value="Sign Up">
-      </form>
+      <div id="forms">
+        <h1>TIC-TAC-TOE</h1>
+        <form id="sign-up-form">
+          <h3>Sign up:</h3>
+          <label for="credentials[email]">Email</label>
+          <input name="credentials[email]" type="email">
+          <label for="credentials[password]">Password</label>
+          <input name="credentials[password]" type="password">
+          <label for="credentials[password_confirmation]">Confirm your password</label>
+          <input name="credentials[password_confirmation]" type="password">
+          <input type="submit" value="Sign Up">
+          <p id="sign-up-message"></p>
+        </form>
+      </div>
     </body>
 </html>
