@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div id="signup-signin-forms">
+      <div id="login-forms">
         <h1>TIC-TAC-TOE</h1>
         <form id="sign-up-form">
           <h3>Sign up for an account:</h3>
@@ -32,9 +32,15 @@
           <label for="credentials[password]">Password</label>
           <input name="credentials[password]" type="password">
           <input type="submit" value="Sign In">
-          <p id="sign-in-message"></p>
+          <p id="sign-in-failure"></p>
         </form>
+        <p id="sign-out-message"></p>
       </div>
-      <button type="button" id="sign-out">Sign out</button>
+
+      <div id="game-content">
+        <p id="sign-in-message"></p>
+        <button type="button" id="sign-out">Sign out</button>
+        <p id="sign-out-failure"></p>
+      </div>
     </body>
 </html>

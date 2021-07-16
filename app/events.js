@@ -22,7 +22,14 @@ const onSignIn = (event) => {
     .catch(ui.onSignInFailure)
 }
 
+const onSignOut = () => {
+  api.signOut()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut
 }
