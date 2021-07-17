@@ -14,7 +14,7 @@ const updateBoard = (cells, lastMove) => {
   if ($('#game-board').is(':hidden')) $('#game-board').show()
   let nextMove = ''
   lastMove === 'X' ? nextMove = 'O' : nextMove = 'X'
-  $('#turn-indicator').html(`Next turn: ${nextMove}`)
+  $('#turn-indicator').text(`Next turn: ${nextMove}`)
 }
 
 module.exports = {
