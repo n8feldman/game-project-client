@@ -41,10 +41,30 @@
         <p id="sign-in-message"></p>
         <h1>Let's play Tic-Tac-Toe!</h1>
         <h3 #id="turn-indicator"></h3>
-        <div #id="game-container"></div>
+        <div #id="game-board">
+          <!-- Styles (index.scss) and structure (index.html) of the table taken in part from here: https://codepen.io/xunnn/pen/yEmMbm -->
+          <!-- Functionality, extra classes, etc are all mine.-->
+          <table>
+            <tr>
+              <td class="game-space"></td>
+              <td class="vert game-space"></td>
+              <td class="game-space"></td>
+            </tr>
+            <tr>
+              <td class="hori game-space"></td>
+              <td class="vert hori game-space"></td>
+              <td class="hori game-space"></td>
+            </tr>
+            <tr>
+              <td class="game-space"></td>
+              <td class="vert"></td>
+              <td class="game-space"></td>
+            </tr>
+          </table>
+        </div>
+        <button type="button" id="play-button"></button>
         <button type="button" id="sign-out">Sign out</button>
         <p id="sign-out-failure"></p>
-        <button type="button" id="play-button"></button>
       </div>
     </body>
 </html>

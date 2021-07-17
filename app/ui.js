@@ -21,6 +21,7 @@ const onSignInSuccess = response => {
   $('#login-forms').hide()
   $('#game-content').show()
   $('#play-button').html('Click here to play!')
+  $('#game-board').hide()
 }
 
 const onSignInFailure = () => {
