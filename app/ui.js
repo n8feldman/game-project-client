@@ -13,13 +13,14 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = response => {
-  $('#sign-in-message').text(`You are now logged in ${response.user.email}`)
+  $('#sign-in-message').text(`Logged in as ${response.user.email}`)
   $('#sign-in-failure').text('')
   $('#sign-in-form').trigger('reset')
   $('#sign-up-message').text('')
   store.token = response.user.token
   $('#login-forms').hide()
   $('#game-content').show()
+  $('#play-button').html('Click here to play!')
 }
 
 const onSignInFailure = () => {
