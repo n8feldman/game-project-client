@@ -19,7 +19,7 @@ const signIn = data => {
   })
 }
 
-const signOut = data => {
+const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
@@ -29,8 +29,20 @@ const signOut = data => {
   })
 }
 
+const newGame = () => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${store.token}`
+    },
+    data: {}
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  newGame
 }

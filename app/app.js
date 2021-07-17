@@ -8,5 +8,6 @@ $(() => {
   $('#sign-up-form').on('submit', eventHandler.onSignUp)
   $('#sign-in-form').on('submit', eventHandler.onSignIn)
   $('#sign-out').on('click', eventHandler.onSignOut)
+  $('#play-button').on('click', eventHandler.newGame)
   $('#game-content').hide()
 })
