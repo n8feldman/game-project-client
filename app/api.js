@@ -40,9 +40,23 @@ const newGame = () => {
   })
 }
 
+const updateGame = data => {
+  console.log('in api call.')
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.gameID,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${store.token}`
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  newGame
+  newGame,
+  updateGame
 }

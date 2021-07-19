@@ -18,3 +18,11 @@ table {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
+
+td:hover {
+  background-color: rgb(166, 222, 245);
+}
+
+td:active {
+  background-color: rgb(196, 226, 178);
+}

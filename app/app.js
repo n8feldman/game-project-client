@@ -9,5 +9,6 @@ $(() => {
   $('#sign-in-form').on('submit', eventHandler.onSignIn)
   $('#sign-out').on('click', eventHandler.onSignOut)
   $('#play-button').on('click', eventHandler.newGame)
+  $('.game-space').on('click', eventHandler.turnTaken)
   $('#game-content').hide()
 })

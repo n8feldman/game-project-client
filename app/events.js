@@ -4,6 +4,7 @@ const getFormFields = require('./../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const gameui = require('./gameui')
+const gameLogic = require('./gamelogic')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -35,9 +36,18 @@ const newGame = () => {
     .catch(gameui.onNewGameFailure)
 }
 
+const turnTaken = event => {
+  const cell = $(event.target).data('id')
+  const data = gameLogic.buildGameData(cell)
+  api.updateGame(data)
+    .then(gameui.makeMoveSuccess)
+    .catch(gameui.makeMoveFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  newGame
+  newGame,
+  turnTaken
 }
