@@ -18,6 +18,7 @@ const buildGameData = spaceTaken => {
   cells[spaceTaken] = moveToPush
   store.cells = cells
   const over = checkWinner(cells)[0]
+  store.over = over
 
   const data = {
     game: {

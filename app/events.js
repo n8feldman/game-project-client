@@ -39,7 +39,9 @@ const newGame = () => {
 
 const turnTaken = event => {
   const cell = $(event.target).data('id')
-  if (store.cells[cell] === '') {
+  if (store.over === true) {
+    gameui.makeMoveFailure('Please start a new game.')
+  } else if (store.cells[cell] === '') {
     const data = gameLogic.buildGameData(cell)
     api.updateGame(data)
       .then(gameui.makeMoveSuccess)
