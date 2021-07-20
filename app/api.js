@@ -41,8 +41,6 @@ const newGame = () => {
 }
 
 const updateGame = data => {
-  console.log('in api call.')
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.gameID,
     method: 'PATCH',

@@ -17,7 +17,7 @@ const buildGameData = spaceTaken => {
   const cells = store.cells
   cells[spaceTaken] = moveToPush
   store.cells = cells
-  const over = checkWinner(cells)
+  const over = checkWinner(cells)[0]
 
   const data = {
     game: {
@@ -28,20 +28,28 @@ const buildGameData = spaceTaken => {
   return data
 }
 
+// Returns an array[bool, str]. The bool indicates if game is over. The str indicates who the winner is (can be nobody).
 const checkWinner = cells => {
   const winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-  let winner = false
+  let gameOver = false
+  let winner = 'nobody'
   for (let i = 0; i < winningCombinations.length; i++) {
-    const enteredValues = [winningCombinations[i][0], winningCombinations[i][1], winningCombinations[i][2]]
-    if (allEqual(enteredValues) === true) winner = true
+    const enteredValues = [cells[winningCombinations[i][0]], cells[winningCombinations[i][1]], cells[winningCombinations[i][2]]]
+    if (allEqual(enteredValues) === true && noEmptyStr(enteredValues) === true) {
+      gameOver = true
+      winner = enteredValues[0]
+    }
   }
-  return winner
+  if (!gameOver) gameOver = noEmptyStr(cells)
+  return [gameOver, winner]
 }
 
 // Taken from stackoverflow, checks for equality among all values of an array
 // https://stackoverflow.com/questions/14832603/check-if-all-values-of-array-are-equal
 const allEqual = arr => arr.every((v) => v === arr[0])
+const noEmptyStr = arr => arr.every((v) => v !== '')
 
 module.exports = {
-  buildGameData
+  buildGameData,
+  checkWinner
 }

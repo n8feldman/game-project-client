@@ -5,6 +5,7 @@ const api = require('./api')
 const ui = require('./ui')
 const gameui = require('./gameui')
 const gameLogic = require('./gamelogic')
+const store = require('./store.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -38,10 +39,14 @@ const newGame = () => {
 
 const turnTaken = event => {
   const cell = $(event.target).data('id')
-  const data = gameLogic.buildGameData(cell)
-  api.updateGame(data)
-    .then(gameui.makeMoveSuccess)
-    .catch(gameui.makeMoveFailure)
+  if (store.cells[cell] === '') {
+    const data = gameLogic.buildGameData(cell)
+    api.updateGame(data)
+      .then(gameui.makeMoveSuccess)
+      .catch(gameui.makeMoveFailure)
+  } else {
+    gameui.makeMoveFailure('Please select an empty cell')
+  }
 }
 
 module.exports = {
