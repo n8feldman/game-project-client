@@ -23,3 +23,23 @@ And this was quite fortunate: On the last day of work we had allotted for develo
 In the following section, you will find my wireframes and user stories. Each page in my notebook has the user story on top with my wireframe just beneath it. Afterwards, you will find the maps for my API calls. Hopefully you find them useful!
 
 ## Wireframes and User Stories
+
+![](https://i.imgur.com/QkEH0A8.jpg?2)
+![](https://i.imgur.com/I1sYZ2N.jpg?1)
+![](https://i.imgur.com/kjJHcMl.png?2)
+![](https://i.imgur.com/PIEAsMn.png?1)
+![](https://i.imgur.com/Z6k2oqW.png?1)
+![](https://i.imgur.com/WKLdwr2.png?2)
+![](https://i.imgur.com/EbFv9Ds.png)
+![](https://i.imgur.com/qC252Gz.png?2)
+![](https://i.imgur.com/GXSW9CU.png?2)
+
+## Structure for my API calls
+
+### Create a user and sign in
+![](https://i.imgur.com/zTx72cw.jpg)
+
+### Patch a game of Tic-Tac-Toe
+![](https://i.imgur.com/E8axF9C.jpeg)
+
+# Thanks for reading!
