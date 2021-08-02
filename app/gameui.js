@@ -17,7 +17,6 @@ const onNewGameFailure = () => {
 }
 
 const makeMoveSuccess = response => {
-  console.log('in make move success')
   updateBoard(response.game.cells, response.game.over)
 }
 
@@ -35,6 +34,7 @@ const updateBoard = (cells, over) => {
   $('#turn-indicator').text(`Next turn: ${store.nextMove}`)
   updateEachSpace(cells)
   // Next up is literally the grossest thing I've ever done.
+  console.log(store.gameID)
   if (over) $('#turn-indicator').text(`The game is over. The winner is ${gameLogic.checkWinner(cells)[1]}!`)
 }
 
